@@ -1,0 +1,103 @@
+/* Psia Przystań – style strony artykułu */
+:root {
+  --ink: #24312b;
+  --muted: #64736b;
+  --brand: #356b50;
+  --brand-dark: #244d39;
+  --accent: #f0b96d;
+  --paper: #fffefa;
+  --surface: #f3f6f1;
+  --line: #e2e9e1;
+  --max-width: 1120px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.75;
+}
+a { color: var(--brand-dark); text-underline-offset: 3px; }
+a:hover { color: #8b5520; }
+a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.container { width: min(var(--max-width), calc(100% - 40px)); margin-inline: auto; }
+.skip-link {
+  position: absolute; left: 12px; top: -60px; z-index: 10;
+  padding: 10px 14px; background: white; border: 2px solid var(--brand);
+}
+.skip-link:focus { top: 12px; }
+
+.site-header { background: #fff; border-bottom: 1px solid var(--line); }
+.header-inner {
+  min-height: 86px; display: flex; align-items: center;
+  justify-content: space-between; gap: 24px;
+}
+.brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); }
+.brand-mark { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 14px; background: var(--surface); font-size: 23px; }
+.brand strong { display: block; font-size: 1.12rem; letter-spacing: -.02em; }
+.brand small { display: block; color: var(--muted); font-size: .76rem; }
+.main-nav { display: flex; flex-wrap: wrap; gap: 22px; }
+.main-nav a { font-size: .92rem; font-weight: 650; text-decoration: none; }
+
+.page-layout { display: grid; grid-template-columns: minmax(0, 760px) 250px; gap: 54px; align-items: start; padding-block: 34px 72px; }
+.article { min-width: 0; }
+.breadcrumbs { display: flex; flex-wrap: wrap; gap: 9px; color: var(--muted); font-size: .82rem; margin-bottom: 26px; }
+.breadcrumbs a { text-decoration: none; }
+.article-header { margin-bottom: 24px; }
+.eyebrow, .sidebar-label { color: var(--brand); font-size: .75rem; font-weight: 800; letter-spacing: .12em; }
+h1, h2, h3 { line-height: 1.25; letter-spacing: -.025em; }
+h1 { max-width: 720px; margin: 8px 0 16px; font-size: clamp(2.1rem, 5vw, 3.35rem); }
+.lead { max-width: 700px; color: #526159; font-size: 1.16rem; line-height: 1.65; }
+.article-meta { display: flex; flex-wrap: wrap; gap: 9px; color: var(--muted); font-size: .82rem; margin-top: 18px; }
+.hero-image, .inline-image { margin: 28px 0 32px; }
+.hero-image img, .inline-image img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 18px; background: var(--surface); }
+figcaption { color: var(--muted); font-size: .82rem; margin-top: 8px; }
+.article-body p { margin: 0 0 18px; }
+.article-body h2 { margin: 42px 0 17px; font-size: 1.8rem; }
+.article-body h3 { margin: 30px 0 12px; font-size: 1.35rem; }
+.breed { margin-bottom: 28px; }
+.breed h3 { color: var(--brand-dark); }
+.article-body strong { color: #263d30; }
+.info-box { margin: 38px 0; padding: 22px 24px; border-left: 4px solid var(--accent); background: #fff7e9; border-radius: 0 12px 12px 0; }
+.info-box h2 { margin: 0 0 10px; font-size: 1.25rem; }
+.info-box p { margin: 0; }
+.sources { padding-top: 6px; }
+.sources h2 { font-size: 1.35rem; }
+.sources li { margin-bottom: 8px; }
+.article-taxonomy { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: .9rem; }
+.article-taxonomy p { margin-bottom: 10px; }
+.article-taxonomy a { display: inline-block; margin: 3px 5px 3px 0; padding: 3px 10px; border-radius: 999px; background: var(--surface); text-decoration: none; }
+
+.sidebar { position: sticky; top: 24px; padding-top: 62px; }
+.sidebar-card { padding: 20px; margin-bottom: 18px; border: 1px solid var(--line); border-radius: 16px; background: #fff; }
+.sidebar-card > a { display: block; margin: 10px 0; font-size: .9rem; text-decoration: none; }
+.sidebar-label { margin: 0 0 14px; }
+.accent-card { background: var(--surface); border: 0; }
+.accent-card .paw { font-size: 1.7rem; }
+.accent-card h2 { font-size: 1.25rem; line-height: 1.3; }
+.accent-card p { color: var(--muted); font-size: .9rem; margin-bottom: 0; }
+
+.site-footer { background: #203c2d; color: #edf4ee; padding: 26px 0; }
+.footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 24px; }
+.footer-inner p { margin: 0; font-size: .86rem; }
+.footer-inner p:last-child { color: #c5d4c9; }
+
+@media (max-width: 850px) {
+  .page-layout { grid-template-columns: 1fr; gap: 20px; }
+  .sidebar { position: static; padding-top: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+}
+@media (max-width: 600px) {
+  .container { width: min(100% - 28px, var(--max-width)); }
+  .header-inner { align-items: flex-start; flex-direction: column; padding-block: 16px; gap: 12px; }
+  .main-nav { gap: 14px; }
+  .page-layout { padding-top: 22px; }
+  .lead { font-size: 1.04rem; }
+  .sidebar { grid-template-columns: 1fr; }
+  .article-body h2 { font-size: 1.55rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
