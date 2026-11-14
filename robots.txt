@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://TWOJ-LOGIN.github.io/TWOJE-REPO/sitemap.xml
+Sitemap: https://msiuda3.github.io/psia-przystan//sitemap.xml
